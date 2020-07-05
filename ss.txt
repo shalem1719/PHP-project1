@@ -1,0 +1,46 @@
+ <table class="w3-table-all w3-large">
+              <tr>
+                <th>Item Number</th>
+                <th>Item Name</th>
+                <th>Price</th>
+                <th></th>
+              </tr>
+              
+              <?php
+              $user_id=$_SESSION['id'];
+              $prodcutsq=mysqli_query($con,"SELECT i.name,i.price,i.id from items i INNER JOIN users_items ui ON i.id=ui.item_id WHERE ui.user_id=$user_id;")
+              or die(mysqli_error($con));
+              if(mysqli_num_rows($prodcutsq)<=0)
+              {
+                ?>
+                <tr>
+                <td colspan="4"><h3 class="w3-center">Add items to the cart first!</h3></td>
+                </tr>
+              <?php
+              }
+              else{
+                $GLOBALS['sum']=0;
+                $GLOBALS['cnt']=1;
+              while($rows=mysqli_fetch_assoc($prodcutsq)){
+                
+                $GLOBALS['sum']+=$rows['price'];
+                ?>
+                <tr>
+                <td><?php echo $cnt;?></td>
+                <td><?php echo $rows['name'];?></td>
+                <td><?php echo "Rs. ".$rows['price'];?></td>
+                <td><button class="w3-button w3-block w3-red"><a style="text-decoration: none;" href="cart-remove.php?id=$rows['id']">Remove</a></button></td>
+                </tr>
+              <?php
+            $cnt++;  
+            }
+              }?>
+              <tr>
+                <td></td>
+                <td>Total</td>
+                <td><?php 
+              echo "Rs. ".$sum;
+              ?></td>
+                <td><button class="w3-button w3-block w3-red w3-large"><a style="text-decoration: none;" href="success.php?id=$user_id">Confirm Order</a></button></td>
+              </tr>
+            </table>

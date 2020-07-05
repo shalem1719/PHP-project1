@@ -1,0 +1,100 @@
+.branding{
+    font-size: 17px;
+}
+.showcase{
+    background: url(img/intro-bg_1.jpg) no-repeat;
+    background-position: center;
+    height: 617px;
+    padding: 140px 100px;
+    color:black;
+}
+.showcase h1{
+    font-size: 40px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+.showcase hr{
+    width: 100px;
+    margin: auto;
+    border-width: 3px;
+    border-color: red;
+    padding-bottom: 20px;
+}
+.foot p, .fooot{
+    padding-top: 10px;
+    padding-bottom: 8px;
+    background-color: black;
+    color: white;
+    margin: 0px;
+}
+.loginform{
+    margin-top: 41px;
+    height: 575px;
+}
+.form-footer{
+    height: 60px;
+}
+.form-body{
+    margin-bottom: 247px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+footer h5{
+    margin-top: 0px;
+    height: 49px;
+    padding-top: 10px;
+    padding-bottom: 0px;
+}
+.product-body{
+
+    /* margin-top: 60px; */
+    margin: 60px 60px 10px 60px;
+    background-color: lightgray;
+    padding: 10px 10px;
+    border-radius: 5px;
+}
+section .chp{
+    margin-top: 30px;
+}
+.success-msg{
+    margin-top: 100px;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+
+@media only screen and (max-width:600px){
+    .showcase{
+        margin-top: 116px;
+        padding: 60px 30px;
+    }
+    .foot p{
+        padding: 20px 30px;
+    }
+    .prod{
+        margin-top: 180px;
+        margin-bottom: 65px;
+    }
+    .fooot{
+        background-color: black;
+        color: #ffffff;
+        padding: 20px 20px 5px 20px; 
+    }
+    .signup-body header, .loginform{
+        margin-top: 115px;
+    }
+    .form-footer h5{
+        margin-bottom: 95px;
+    }
+    .billing-table table{
+        margin-top: 100px;
+    }
+    .loginform .changepwd{
+        margin-top: 50px;
+    }
+    section .chp{
+        margin-top: 30px;
+    }
+    .success-msg{
+        margin-top: 100px;
+    }
+}
